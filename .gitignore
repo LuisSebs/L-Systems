@@ -1,0 +1,9 @@
+# Ignorar archivos cache
+*.pyc
+__pycache__/
+
+# archivo de prueba
+borrador.py
+
+# imagenes
+*.png
