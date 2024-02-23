@@ -7,7 +7,7 @@ class KochCurve(Grammar):
         number_iterations=4, 
         angle=90, 
         distance=5, 
-        axiom="F++F++F", 
+        axiom="F", 
         rules={
             "F": "F+F-F-F+F"
         }

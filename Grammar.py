@@ -68,13 +68,15 @@ class Grammar(ABC):
         pass
 
     def run(self, x=0, y=0):
+        """
+            Run graphic turtle
+        """
         window = turtle.Screen()
         t = turtle.Turtle()
         t.speed(0)
         t.up()
         t.setposition(x,y)
         t.down()
-
         instruction_string = self.create_l_system()
         self.draw_l_systems(t, instruction_string)
         turtle.Screen().exitonclick()
