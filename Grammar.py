@@ -1,5 +1,9 @@
 import turtle
+import colorama
 from abc import ABC, abstractclassmethod
+from Helpers.ColoramaHelpers import cy, r, g, b, y, m, lb, lc, lg, lm, ly, lr
+from Helpers.ColoramaHelpers import p
+from Helpers.ColoramaHelpers import c
 
 class Grammar(ABC):
 
@@ -7,12 +11,23 @@ class Grammar(ABC):
         Grammar for Lindenmayer System
     """
 
-    def __init__(self, number_iterations, angle, distance, axiom, rules) -> None:
+    def __init__(self, title, number_iterations, angle, distance, axiom, rules) -> None:
+        self.title = title
         self.number_iterations = number_iterations
         self.angle = angle
         self.distance = distance
         self.axiom = axiom
         self.rules = rules
+
+    def __str__(self) -> str:
+        result = c(self.title, cy)+":\n\n"
+        result += "Iteraciones: "+c(str(self.number_iterations), lg)+"\n"
+        result += "Angulo: "+c(str(self.angle), lg)+"\n"
+        result += "Axiom: "+c(self.axiom, lg)+"\n"
+        result += "Rules:\n\n"
+        for key in self.rules.keys():
+            result += " "+key+c("=",y)+c(self.rules[key])+"\n"
+        return result 
 
     def appy_rules(self, letter):
         """
@@ -63,12 +78,3 @@ class Grammar(ABC):
         instruction_string = self.create_l_system()
         self.draw_l_systems(t, instruction_string)
         turtle.Screen().exitonclick()
-
-
-
-
-    
-
-
-
-    

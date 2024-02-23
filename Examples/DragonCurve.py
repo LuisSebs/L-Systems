@@ -3,6 +3,7 @@ from Grammar import Grammar
 class DragonCurve(Grammar):
     
     def __init__(self, 
+        title="Dragon Curve",
         number_iterations=10, 
         angle=90, 
         distance=5, 
@@ -11,7 +12,7 @@ class DragonCurve(Grammar):
             "F": "F+G",
             "G": "F-G"
         } ) -> None:
-        super().__init__(number_iterations, angle, distance, axiom, rules)
+        super().__init__(title, number_iterations, angle, distance, axiom, rules)
 
     def draw_l_systems(self, some_turtle, instructions):
         for task in instructions:
@@ -23,7 +24,3 @@ class DragonCurve(Grammar):
                 some_turtle.left(self.angle)
             elif task == '-':
                 some_turtle.right(self.angle)
-
-
-
-    

@@ -3,6 +3,7 @@ from Grammar import Grammar
 class SierpinskiTriangle(Grammar):
 
     def __init__(self, 
+        title="Sierpinski Triangle",
         number_iterations=6, 
         angle=120, 
         distance=5, 
@@ -12,8 +13,7 @@ class SierpinskiTriangle(Grammar):
             "G": "GG"
         }
     ) -> None:
-
-        super().__init__(number_iterations, angle, distance, axiom, rules)
+        super().__init__(title, number_iterations, angle, distance, axiom, rules)
 
     def draw_l_systems(self, some_turtle, instructions):
         for task in instructions:

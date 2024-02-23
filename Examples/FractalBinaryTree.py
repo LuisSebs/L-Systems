@@ -2,7 +2,8 @@ from Grammar import Grammar
 
 class FractalBinaryTree(Grammar):
 
-    def __init__(self, 
+    def __init__(self,
+        title="Fractal Binary Tree",
         number_iterations=6, 
         angle=45, 
         distance=5, 
@@ -12,7 +13,7 @@ class FractalBinaryTree(Grammar):
             "0": "1[0]0"
         }
         ) -> None:
-        super().__init__(number_iterations, angle, distance, axiom, rules)
+        super().__init__(title, number_iterations, angle, distance, axiom, rules)
     
     def draw_l_systems(self, some_turtle, instructions):
 

@@ -3,6 +3,7 @@ from Grammar import Grammar
 class FractalPlant(Grammar):
 
     def __init__(self, 
+        title="Fractal Plant",
         number_iterations=6, 
         angle=25, 
         distance=5, 
@@ -12,7 +13,7 @@ class FractalPlant(Grammar):
             "F": "FF"
         }
     ) -> None:
-        super().__init__(number_iterations, angle, distance, axiom, rules)
+        super().__init__(title, number_iterations, angle, distance, axiom, rules)
 
     def draw_l_systems(self, some_turtle, instructions):
 
